@@ -6,25 +6,28 @@ public class GenericItem implements Cloneable {
     protected GenericItem analog; // аналог товара по id
     protected Category category = Category.GENERAL; // категория товара // GENERAL - по умолчанию
 
-    // конструктор №1
-    public GenericItem(String tempName, float tempPrice, Category tempCategory) {
+    //конструктор №1
+    public GenericItem() {
         id = currentID++;
-        name = tempName;
-        price = tempPrice;
-        category = tempCategory;
     }
 
     // конструктор №2
-    public GenericItem(String tempName, float tempPrice, GenericItem tempAnalog) {
-        id = currentID++;
+    public GenericItem(String tempName, float tempPrice) {
+        this();
         name = tempName;
         price = tempPrice;
-        analog = tempAnalog;
     }
 
     // конструктор №3
-    public GenericItem() {
-        id = currentID++;
+    public GenericItem(String tempName, float tempPrice, GenericItem tempAnalog) {
+        this(tempName, tempPrice);
+        analog = tempAnalog;
+    }
+
+    // конструктор №4
+    public GenericItem(String tempName, float tempPrice, Category tempCategory) {
+        this(tempName, tempPrice);
+        category = tempCategory;
     }
 
     public int getId() {

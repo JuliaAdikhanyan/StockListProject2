@@ -9,10 +9,8 @@ public class FoodItem extends GenericItem { // наследуем класс Foo
     private SimpleDateFormat dateFormat = new SimpleDateFormat(" dd MMMM yyyy"); // формат даты
 
     // конструктор №1
-    public FoodItem(String tempName, float tempPrice, FoodItem tempAnalog, GregorianCalendar tempDateOfIncome, short tempExpires) {
-        this(tempName, tempPrice, tempExpires); // получаем значения от конструктора №2
-        analog = tempAnalog;
-        dateOfIncome = tempDateOfIncome;
+    public FoodItem(String tempName) {
+        name = tempName;
     }
 
     // констуруктор №2
@@ -23,8 +21,10 @@ public class FoodItem extends GenericItem { // наследуем класс Foo
     }
 
     // конструктор №3
-    public FoodItem(String tempName) {
-        name = tempName;
+    public FoodItem(String tempName, float tempPrice, FoodItem tempAnalog, GregorianCalendar tempDateOfIncome, short tempExpires) {
+        this(tempName, tempPrice, tempExpires); // получаем значения от конструктора №2
+        analog = tempAnalog;
+        dateOfIncome = tempDateOfIncome;
     }
 
     public short getExpires() {
