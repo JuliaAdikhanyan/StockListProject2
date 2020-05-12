@@ -23,7 +23,6 @@ public class GenericItem implements Cloneable {
     public GenericItem(String tempName, float tempPrice) {
 
         this(tempName, tempPrice, null, Category.GENERAL);
-        System.out.println("contr - " + tempName + "  - " + this.getName());
     }
 
     // конструктор №3
