@@ -10,21 +10,19 @@ public class FoodItem extends GenericItem { // наследуем класс Foo
 
     // конструктор №1
     public FoodItem(String tempName) {
-        name = tempName;
+        this(tempName, 0, null, new GregorianCalendar(), (short) 0);
     }
 
     // констуруктор №2
     public FoodItem(String tempName, float tempPrice, short tempExpires) {
-        this(tempName); // получаем значения от конструктора №3
-        price = tempPrice;
-        expires = tempExpires;
+        this(tempName, tempPrice, null, new GregorianCalendar(), tempExpires);
     }
 
     // конструктор №3
     public FoodItem(String tempName, float tempPrice, FoodItem tempAnalog, GregorianCalendar tempDateOfIncome, short tempExpires) {
-        this(tempName, tempPrice, tempExpires); // получаем значения от конструктора №2
-        analog = tempAnalog;
-        dateOfIncome = tempDateOfIncome;
+        super(tempName, tempPrice, tempAnalog);
+        this.dateOfIncome = tempDateOfIncome;
+        this.expires = tempExpires;
     }
 
     public short getExpires() {

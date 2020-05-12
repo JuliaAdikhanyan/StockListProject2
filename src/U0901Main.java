@@ -32,5 +32,6 @@ public class U0901Main {
         FoodItem food = new FoodItem(name, price, expires);
         // вывод полученных данных
         food.printAll();
+
     }
 }
